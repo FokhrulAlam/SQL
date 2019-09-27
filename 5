@@ -1,0 +1,34 @@
+Hello everyone. Now we will know how to delete a row.
+
+
+
+
+
+DROP TABLE student;
+
+CREATE TABLE student(
+    student_id INT AUTO_INCREMENT,
+    name VARCHAR(15),
+    major VARCHAR(15),
+    PRIMARY KEY(student_id)
+);
+
+SELECT * FROM student;
+
+INSERT INTO student(name,major) VALUES('Fokhrul','EEE');
+INSERT INTO student(name,major) VALUES('Mrinal','EEE');
+INSERT INTO student(name,major) VALUES('Rahima','BBA');
+INSERT INTO student(name,major) VALUES('Mousumi','English');
+INSERT INTO student(name,major) VALUES('Mayabi','Math');
+INSERT INTO student(name,major) VALUES('Minhaz','IT');
+
+DELETE FROM student
+WHERE student_id=2;
+
+DELETE FROM student
+WHERE name='Q' AND major='Zoology';
+
+DELETE FROM student
+WHERE name='Rahima' or name='Mousumi';
+
+DELETE FROM student;
