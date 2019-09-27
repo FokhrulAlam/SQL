@@ -1,0 +1,40 @@
+NOTE: Please see file no. 1 first. This is file no 2.
+
+Here we will create the same table. But look at the code below. This code is not going to print the whole table.
+    
+ student_id |    name    |   major   
+-------------+------------+----------
+        5001 | Fokhrul    | EEE       
+        5002 | Mrinal     | EEE       
+        5005 | Rahima     | BBA       
+        5006 | Mousumi    | English   
+        5007 | Mayabi     | Math      
+        5003 | Minhaz     | IT  
+
+
+OUR CODE IS AS FOLLOWS:
+
+DROP TABLE student;
+
+CREATE TABLE student(
+    student_id INT,
+    name VARCHAR(15) NOT NULL,
+    major VARCHAR(15) UNIQUE,
+    PRIMARY KEY(student_id)
+);
+
+SELECT * FROM student;
+
+INSERT INTO student VALUES(5001,'Fokhrul','EEE');
+INSERT INTO student VALUES(5002,'Mrinal','EEE');
+INSERT INTO student VALUES(5003,'Rahima','BBA');
+INSERT INTO student VALUES(5004,NULL,'English');
+INSERT INTO student VALUES(5005,'Mayabi','Math');
+INSERT INTO student VALUES(5006,'Minhaz','IT');
+
+
+
+EXPLANATION: While creating the table, we put a condition for the column 'name' and it is "NOT NULL". For the column 'major', the 
+condition is 'UNIQUE'. But, look! In the second row, the third column repeats that in the third column of first row. It means they
+are not unique. So, Whichever of these two will get run first will work fine. The second one would show an erro such as 
+"Duplicate Entry EEE for major". The fourth will not get executed because the column is NULL what it actually can not be.
