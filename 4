@@ -1,0 +1,43 @@
+Hello. This is file no 4. Please see the code below and notice the difference. Create the table and run the code part by part to 
+see what happens. Here I updated the table after creating it. I updated names and majors for some of the IDs.
+
+
+
+
+DROP TABLE student;
+
+CREATE TABLE student(
+    student_id INT AUTO_INCREMENT,
+    name VARCHAR(15),
+    major VARCHAR(15),
+    PRIMARY KEY(student_id)
+);
+
+SELECT * FROM student;
+
+INSERT INTO student(name,major) VALUES('Fokhrul','EEE');
+INSERT INTO student(name,major) VALUES('Mrinal','EEE');
+INSERT INTO student(name,major) VALUES('Rahima','BBA');
+INSERT INTO student(name,major) VALUES(NULL,'English');
+INSERT INTO student(name,major) VALUES('Mayabi','Math');
+INSERT INTO student(name,major) VALUES('Minhaz','IT');
+
+
+UPDATE student
+SET major='Electrical'
+WHERE major='EEE';
+
+UPDATE student
+SET name='Mousumi'
+WHERE major='English';
+
+UPDATE student
+SET major='Biochemistry'
+WHERE major='Math' OR major='IT';
+
+UPDATE student
+SET major='undecided', name='Alam'
+WHERE student_id=1;
+
+UPDATE student
+SET major='undecided';
