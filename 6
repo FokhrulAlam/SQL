@@ -1,0 +1,57 @@
+Hi, now we will see how we can print a specific column, how we can order information etc. Please see the following code. We are
+going to learn a whole lot of things.
+
+
+
+DROP TABLE student;
+
+CREATE TABLE student(
+    student_id INT AUTO_INCREMENT,
+    name VARCHAR(15),
+    major VARCHAR(15),
+    PRIMARY KEY(student_id)
+);
+
+SELECT * FROM student;
+
+SELECT major FROM student;
+
+SELECT student_id,name FROM student;
+
+SELECT student.name, student.major
+FROM student;
+
+SELECT student_id,major FROM student
+ORDER BY major;
+
+SELECT name,major FROM student
+ORDER BY name DESC;
+
+SELECT * FROM student
+ORDER BY student_id DESC;
+
+SELECT * FROM student
+ORDER BY major ASC,student_id DESC;
+
+SELECT * FROM student
+LIMIT 2;
+
+SELECT * FROM student
+ORDER BY major
+LIMIT 2;
+
+SELECT * FROM student
+WHERE major='EEE';
+
+SELECT major,name FROM student
+WHERE student_id>=4
+ORDER BY student_id DESC
+LIMIT 5;
+
+
+INSERT INTO student(name,major) VALUES('Fokhrul','EEE');
+INSERT INTO student(name,major) VALUES('Mrinal','EEE');
+INSERT INTO student(name,major) VALUES('Rahima','BBA');
+INSERT INTO student(name,major) VALUES('Mousumi','English');
+INSERT INTO student(name,major) VALUES('Mayabi','Math');
+INSERT INTO student(name,major) VALUES('Minhaz','IT');
