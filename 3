@@ -1,0 +1,19 @@
+Hope, you saw file no 1 and 2. Now, see the following code. Run it and see the difference. **AUTO_INCREMENT
+
+DROP TABLE student;
+
+CREATE TABLE student(
+    student_id INT AUTO_INCREMENT,
+    name VARCHAR(15),
+    major VARCHAR(15),
+    PRIMARY KEY(student_id)
+);
+
+SELECT * FROM student;
+
+INSERT INTO student(name,major) VALUES('Fokhrul','EEE');
+INSERT INTO student(name,major) VALUES('Mrinal','EEE');
+INSERT INTO student(name,major) VALUES('Rahima','BBA');
+INSERT INTO student(name,major) VALUES(NULL,'English');
+INSERT INTO student(name,major) VALUES('Mayabi','Math');
+INSERT INTO student(name,major) VALUES('Minhaz','IT');
