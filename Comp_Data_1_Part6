@@ -1,0 +1,56 @@
+Hi. We are going to see UNION, JOIN in this file.
+
+
+##### At first, let's look at UNION--
+
+----Find a list of employees and branch names----
+
+SELECT first_name AS employee_branch_names
+FROM employee
+UNION
+SELECT branch_name
+FROM branch;
+
+-----Find a list of all clients and branch suppliers' names and their IDs----
+SELECT client_name AS client_branch_suppliers, client.branch_id AS ID
+FROM client
+UNION
+SELECT supplier_name, branch_supplier.branch_id
+FROM branch_supplier;
+
+-----Find a list of all money spent or earned by the company-----
+SELECT salary AS money_spent_money_earned
+FROM employee
+UNION
+SELECT total_sales
+FROM works_with;
+
+
+##### Now, we will see the use of JOIN. JOIN is basically used to combine two or more rows from different tables based on their
+related columns.
+At first, run the following command so that you understand the difference--
+
+INSERT INTO branch VALUES(4,'Buffalo',NULL,NULL);
+
+###INNER JOIN-
+
+----Find all branches and the names of their managers---
+SELECT employee.emp_id, employee.first_name, branch.branch_name
+FROM employee
+JOIN branch
+ON employee.emp_id=branch.mgr_id;
+
+###LEFT JOIN-
+SELECT employee.emp_id, employee.first_name, branch.branch_name
+FROM employee
+LEFT JOIN branch
+ON employee.emp_id=branch.mgr_id;
+
+###RIGHT JOIN-
+SELECT employee.emp_id, employee.first_name, branch.branch_name
+FROM employee
+RIGHT JOIN branch
+ON employee.emp_id=branch.mgr_id;
+
+
+
