@@ -56,3 +56,9 @@ WHERE client.client_id IN (
                           WHERE totals > 100000
 );
 
+######ON DELETE
+
+DELETE FROM branch
+WHERE branch_id=2;
+
+SELECT * FROM branch_supplier;
